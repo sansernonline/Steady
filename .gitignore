@@ -1,0 +1,42 @@
+# ---- Build output ----
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+publish/
+*.dll
+*.pdb
+
+# ---- Visual Studio ----
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# ---- Rider / VS Code ----
+.idea/
+.vscode/
+
+# ---- NuGet ----
+*.nupkg
+packages/
+project.lock.json
+
+# ---- OS / misc junk ----
+Thumbs.db
+ehthumbs.db
+.DS_Store
+*.tmp
+.writetest
+.sbxjunk/
+
+# ---- App-local ----
+# settings ของผู้ใช้เก็บที่ %AppData%\Steady\settings.json (ไม่อยู่ใน repo อยู่แล้ว)
+
+# ---- Optional: third-party data ----
+# haarcascade ดาวน์โหลดได้ตาม README — ปลด comment ถ้าไม่อยากเก็บไฟล์ ~930KB ใน git
+# Steady/Steady/Assets/haarcascade_frontalface_default.xml
+obj
+bin
