@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- Target Windows 10 22H2+ for WinRT sensor API support -->
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <RootNamespace>Steady</RootNamespace>
+    <AssemblyName>Steady</AssemblyName>
+    <UseWPF>true</UseWPF>
+    <!-- NotifyIcon requires WinForms -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- x64 only: OpenCV native DLLs ship as x64 -->
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Version>1.0.0</Version>
+    <Company>KK</Company>
+    <Product>Steady — Focal Point for Windows</Product>
+    <ApplicationIcon>Assets\steady.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WinRT sensor APIs come automatically with net8.0-windows10.x TFM — no extra package needed -->
+    <!-- OpenCV for camera head-tracking (Tier 2) -->
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.9.0.20240103" />
+    <PackageReference Include="OpenCvSharp4.Extensions" Version="4.9.0.20240103" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      Download haarcascade_frontalface_default.xml from:
+      https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
+      Place it at: Steady/Assets/haarcascade_frontalface_default.xml
+    -->
+    <Content Include="Assets\haarcascade_frontalface_default.xml" CopyToOutputDirectory="PreserveNewest" Condition="Exists('Assets\haarcascade_frontalface_default.xml')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Tray icons (active / disabled) copied next to the exe -->
+    <Content Include="Assets\steady.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\steady_off.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

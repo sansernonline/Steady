@@ -1,2 +1,1 @@
-# Steady
-Focal Point for Windows
+# Steady - Focal Point for Windows

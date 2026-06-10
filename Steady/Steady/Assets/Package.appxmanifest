@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MSIX Packaging Manifest
+  To package as MSIX, add a Windows Application Packaging Project (.wapproj) in Visual Studio
+  pointing to this manifest, or use the dotnet publish command with RuntimeIdentifier=win-x64.
+
+  Required capabilities declared below:
+    - webcam: for camera-based head tracking (Tier 2)
+    - microphone: reserved for v1.5 audio-speed detection
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <Identity
+    Name="KK.Steady"
+    Publisher="CN=KK"
+    Version="1.0.0.0"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>Steady</DisplayName>
+    <PublisherDisplayName>KK</PublisherDisplayName>
+    <Description>Focal Point for Windows — reduces motion sickness in moving vehicles</Description>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22621.0" MaxVersionTested="10.0.22621.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en-US"/>
+    <Resource Language="th-TH"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="Steady" Executable="Steady.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="Steady"
+        Description="Focal Point for Windows"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile ShortName="Steady" Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png"/>
+      </uap:VisualElements>
+      <Extensions>
+        <!-- Auto-start on login -->
+        <uap:Extension Category="windows.startupTask" Executable="Steady.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap:StartupTask TaskId="SteadyStartup" Enabled="false" DisplayName="Steady"/>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust"/>
+    <uap:Capability Name="webcam"/>
+    <uap:Capability Name="microphone"/>
+  </Capabilities>
+
+</Package>

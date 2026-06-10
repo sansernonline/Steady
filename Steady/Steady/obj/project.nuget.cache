@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "m9qF9v4KZpQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sanse\\OneDrive\\WORK\\_KK\\Projects\\Steady - Focal Point for Windows\\Steady\\Steady\\Steady.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sanse\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio\\2.2.1\\naudio.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.asio\\2.2.1\\naudio.asio.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.core\\2.2.1\\naudio.core.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.midi\\2.2.1\\naudio.midi.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.wasapi\\2.2.1\\naudio.wasapi.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.winforms\\2.2.1\\naudio.winforms.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\naudio.winmm\\2.2.1\\naudio.winmm.2.2.1.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\opencvsharp4\\4.9.0.20240103\\opencvsharp4.4.9.0.20240103.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\opencvsharp4.extensions\\4.9.0.20240103\\opencvsharp4.extensions.4.9.0.20240103.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\opencvsharp4.runtime.win\\4.9.0.20240103\\opencvsharp4.runtime.win.4.9.0.20240103.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\opencvsharp4.windows\\4.9.0.20240103\\opencvsharp4.windows.4.9.0.20240103.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\sanse\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.57\\microsoft.windows.sdk.net.ref.10.0.22621.57.nupkg.sha512"
+  ],
+  "logs": []
+}
