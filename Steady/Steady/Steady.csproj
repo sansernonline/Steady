@@ -44,4 +44,20 @@
     <Content Include="Assets\steady_off.ico" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <!-- Name the publish folder with app + version, e.g.
+       bin\Release\publish\Steady-v1.0.0-win-x64\  (only when publishing with a RID) -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <PublishDir>$(MSBuildProjectDirectory)\bin\$(Configuration)\publish\$(AssemblyName)-v$(Version)-$(RuntimeIdentifier)\</PublishDir>
+  </PropertyGroup>
+
+  <!-- After publish, zip the folder into a ready-to-share artifact named with the version -->
+  <Target Name="ZipPublish" AfterTargets="Publish" Condition="'$(RuntimeIdentifier)' != ''">
+    <PropertyGroup>
+      <ReleaseZip>$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName)-v$(Version)-$(RuntimeIdentifier).zip</ReleaseZip>
+    </PropertyGroup>
+    <Delete Files="$(ReleaseZip)" Condition="Exists('$(ReleaseZip)')" />
+    <ZipDirectory SourceDirectory="$(PublishDir)" DestinationFile="$(ReleaseZip)" />
+    <Message Importance="high" Text="Packaged release: $(ReleaseZip)" />
+  </Target>
+
 </Project>
