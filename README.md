@@ -6,9 +6,9 @@
 
 ### Focal Point for Windows
 
-ลดอาการ **เมารถ** ขณะใช้แล็ปท็อป/แท็บเล็ตในยานพาหนะ — แสดง *จุดนำสายตา* ที่ขอบจอ ขยับตามการเคลื่อนไหวจริงของรถ
+Reduce **motion sickness** while using a laptop/tablet in a moving vehicle — it shows *focal-point cues* at the edges of your screen that move with the vehicle's real motion.
 
-แรงบันดาลใจจาก iOS 18 *Vehicle Motion Cues* แต่ออกแบบใหม่ให้ทำงานด้วย **อุปกรณ์บนเครื่องเท่านั้น** ไม่ต้องพึ่งมือถือหรือ GPS
+Inspired by iOS 18 *Vehicle Motion Cues*, but redesigned to work using **on-device sensors only** — no phone or GPS required.
 
 ![version](https://img.shields.io/badge/version-1.0.0-2E63FF)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6)
@@ -19,26 +19,26 @@
 
 ---
 
-## ทำไมต้อง Steady
+## Why Steady
 
-อาการเมารถเกิดจาก **ความขัดแย้งทางประสาทสัมผัส** — หูชั้นในรู้ว่ารถกำลังเคลื่อนที่ แต่สายตาที่จ้องจอนิ่งบอกสมองว่าอยู่กับที่ Steady เติม *สัญญาณการเคลื่อนไหวที่มองเห็นได้* ที่ขอบสายตาให้ตรงกับสิ่งที่ร่างกายรู้สึก โดยไม่บังเนื้อหาหลักบนจอ
+Motion sickness comes from a **sensory conflict** — your inner ear knows the vehicle is moving, but your eyes fixed on a still screen tell your brain you're stationary. Steady adds *visible motion cues* in your peripheral vision that match what your body feels, without covering the main content on screen.
 
-## ✨ ฟีเจอร์เด่น
+## ✨ Highlights
 
-- **จุดนำสายตาที่ขอบจอ** — overlay โปร่งใส คลิกทะลุได้ ไม่ขวางการทำงาน
-- **เลือกเซนเซอร์อัตโนมัติ 2 ระดับ** — gyro (Tier 1) หรือกล้องจับการขยับศีรษะ (Tier 2)
-- **ปรับแต่งได้** — ความหนาแน่นจุด, ขนาด, ความโปร่งใส, ความเข้ม + สีปรับตัดกับพื้นหลังอัตโนมัติ
-- **ประหยัดแบตสุด** — ลด FPS เมื่อนิ่ง, ปล่อยกล้องเมื่อหยุดนาน, กล้องเปิดเฉพาะตอนใช้งาน
-- **เป็นส่วนตัว** — ประมวลผลภาพ/เสียงในเครื่องทั้งหมด ไม่บันทึก ไม่ส่งออก
-- **เบาและไม่เกะกะ** — รันใน system tray, เปิด/ปิดด้วย `Ctrl+Alt+M`, ดับเบิลคลิกรันทันที
+- **Edge-of-screen focal cues** — a transparent, click-through overlay that doesn't get in the way
+- **Two-tier automatic sensor selection** — gyro (Tier 1) or a camera tracking head movement (Tier 2)
+- **Customizable** — dot density, size, transparency, intensity + colors that auto-contrast against the background
+- **Highly battery-friendly** — lowers FPS when still, releases the camera after long pauses, camera runs only while active
+- **Private** — all image/audio processing happens on-device; nothing is recorded or sent out
+- **Light and unobtrusive** — runs in the system tray, toggle with `Ctrl+Alt+M`, double-click to run instantly
 
-## 🧭 ทำงานยังไง
+## 🧭 How It Works
 
-แอปตรวจการเคลื่อนไหวของรถ แล้วเลื่อน "สนามจุด" ที่ขอบจอพร้อมกันตามเวกเตอร์ความเร่งจริง (เร่ง→ลง, เบรก→ขึ้น, เลี้ยวซ้าย→ขวา) — เครื่องที่มี gyro ใช้ตรงๆ ส่วนโน้ตบุ๊กทั่วไปใช้กล้องจับการขยับศีรษะแทน (ซึ่งคือแรง G ที่ร่างกายรู้สึกจริง)
+The app detects the vehicle's motion and shifts a "dot field" along the screen edges in sync with the real acceleration vector (accelerate → down, brake → up, turn left → right). Devices with a gyro use it directly, while ordinary laptops use the camera to track head movement instead (which reflects the actual G-forces your body feels).
 
-## 🚀 เริ่มใช้งาน
+## 🚀 Getting Started
 
-ต้องมี **Windows 10 22H2+**, **.NET 8 SDK**, สถาปัตยกรรม **x64**
+Requires **Windows 10 22H2+**, **.NET 8 SDK**, **x64** architecture
 
 ```powershell
 # build + run
@@ -46,25 +46,25 @@ dotnet build "Steady\Steady.sln" -c Release
 dotnet run --project "Steady\Steady\Steady.csproj"
 ```
 
-แอปจะไปอยู่ที่ system tray — ดับเบิลคลิกไอคอน หรือกด `Ctrl+Alt+M` เพื่อเปิด/ปิด
+The app lives in the system tray — double-click the icon, or press `Ctrl+Alt+M` to toggle it on/off.
 
-> 📖 รายละเอียดครบ (สถาปัตยกรรม, การ publish portable, การตั้งค่า, พฤติกรรมจุด): ดู **[README ฉบับเต็ม](Steady/Steady/README.md)**
+> 📖 Full details (architecture, portable publishing, settings, dot behavior): see the **[full README](Steady/Steady/README.md)**
 
-## 📂 ลิงก์ในโปรเจกต์
+## 📂 Project Links
 
-| ไฟล์ | คำอธิบาย |
-|------|----------|
-| [README ฉบับเต็ม](Steady/Steady/README.md) | คู่มือ build/run/publish + สถาปัตยกรรม |
-| [CHANGELOG](Steady/Steady/CHANGELOG.md) | ประวัติเวอร์ชัน (เริ่มที่ v1.0.0) |
-| [Feature Spec](docs/Steady_Feature_Spec.docx) | เอกสารสรุปฟีเจอร์ฉบับละเอียด |
+| File | Description |
+|------|-------------|
+| [Full README](Steady/Steady/README.md) | build/run/publish guide + architecture |
+| [CHANGELOG](Steady/Steady/CHANGELOG.md) | version history (starting at v1.0.0) |
+| [Feature Spec](docs/Steady_Feature_Spec.docx) | detailed feature specification document |
 
-## 🗺️ สถานะ
+## 🗺️ Status
 
-**v1.0.0** — ใช้งานได้จริง (overlay + 2-tier sensor + ปรับแต่ง + ประหยัดแบต)
-ดูแผนเวอร์ชันถัดไปใน [CHANGELOG](Steady/Steady/CHANGELOG.md)
+**v1.0.0** — production-ready (overlay + 2-tier sensor + customization + battery saving)
+See the plan for the next version in the [CHANGELOG](Steady/Steady/CHANGELOG.md)
 
 ---
 
 <div align="center">
-<sub>Steady — your focal point on the road · “โฟกัสไว้ ไม่เมารถ”</sub>
+<sub>Steady — your focal point on the road · "Stay focused, skip the motion sickness"</sub>
 </div>
